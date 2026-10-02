@@ -1967,6 +1967,45 @@ body[data-view="mist"] .movement[data-id="US-01-01"]{
   max-width:none !important;
 }
 </style>
+
+<style id="pass157-final-spacing">
+/* Pass 157 — make the requested changes visibly measurable. */
+@media (min-width:801px){
+  /* One comfortable line of breathing room between Version buttons and Views. */
+  .compact-header .toolbar-bottom{
+    top:44px !important;
+  }
+}
+/* Getting Started is a blue navigation link, but not underlined. */
+#gettingStartedLink,
+#gettingStartedLink:hover,
+#gettingStartedLink:focus,
+#gettingStartedLink:active{
+  text-decoration:none !important;
+  text-decoration-line:none !important;
+  border-bottom:0 !important;
+}
+</style>
+
+<style id="pass162-search-clear-alignment">
+/* Pass 162 — align the top edges of Search and Clear.
+   The previous pass moved Search the wrong direction. */
+@media (min-width:801px){
+  .compact-header .toolbar-top #search{
+    transform:translateY(7px) !important;
+  }
+}
+</style>
+
+
+<style id="pass163-clear-alignment">
+@media (min-width:801px){
+  .compact-header .toolbar-top #clear{
+    transform:translateY(7px) !important;
+  }
+}
+</style>
+
 </head><body data-view="mist">
 <!-- Pass 132 — Getting Started popup -->
 <div id="mcWelcome" role="dialog" aria-modal="true" aria-labelledby="mcWelcomeTitle">
@@ -2746,6 +2785,199 @@ draw();
   }
 }
 </style>
+
+<style id="pass151-getting-started-layout">
+/* Pass 151 — give Getting Started its own centered line and make the welcome panel genuinely smaller. */
+.compact-header{
+  height:132px !important;
+  min-height:132px !important;
+}
+.compact-header .try-suggestions{
+  margin-top:-2px !important;
+  padding-top:0 !important;
+  line-height:18px !important;
+}
+.mc-try-separator{display:none !important}
+#gettingStartedLink{
+  display:block !important;
+  width:max-content !important;
+  margin:1px auto 0 !important;
+  color:#54798a !important;
+  font:600 13px/18px Arial,sans-serif !important;
+  text-decoration:underline !important;
+  text-underline-offset:2px !important;
+}
+#gettingStartedLink:hover{color:#3f6675 !important}
+
+/* Keep the reading area aligned with the taller navigation header. */
+.workspace{
+  height:calc(100vh - 132px) !important;
+}
+
+/* The welcome panel was only slightly smaller before; make the reduction visible. */
+#mcWelcomeBox{
+  width:min(560px,90vw) !important;
+  padding:18px 22px 16px !important;
+  font-size:13px !important;
+  line-height:1.4 !important;
+}
+#mcWelcomeBox h2{
+  font-size:23px !important;
+  margin-bottom:4px !important;
+}
+#mcWelcomeBox .mc-welcome-intro{margin-bottom:11px !important}
+#mcWelcomeBox ol{margin-bottom:12px !important}
+#mcWelcomeBox li{margin-bottom:6px !important}
+#mcWelcomeClose{
+  padding:6px 14px !important;
+  font-size:12px !important;
+}
+@media (min-width:801px) and (max-width:1250px){
+  #mcWelcome{padding-top:var(--mc-popup-top,132px) !important}
+}
+@media (max-width:800px){
+  .compact-header{height:132px !important;min-height:132px !important}
+  #mcWelcome{padding:var(--mc-popup-top,132px) 14px 14px !important}
+  #mcWelcomeBox{max-height:calc(100vh - var(--mc-popup-top,132px) - 14px) !important}
+}
+</style>
+
+<style id="pass153-nav-final">
+/* Pass 153 — restore the view buttons beneath the version buttons while
+   keeping Try and Getting Started centered beneath the Search bar. */
+.compact-header .toolbar{
+  position:relative !important;
+}
+.compact-header .toolbar-top{
+  width:100% !important;
+}
+.compact-header .search-stack{
+  min-width:0 !important;
+}
+.compact-header .try-suggestions{
+  text-align:center !important;
+  margin-top:-2px !important;
+  padding-top:0 !important;
+}
+#gettingStartedLink{
+  display:block !important;
+  width:max-content !important;
+  margin:1px auto 0 !important;
+  font-size:15px !important;
+}
+.compact-header .toolbar-bottom{
+  position:absolute !important;
+  top:38px !important;
+  right:0 !important;
+  width:auto !important;
+  height:30px !important;
+  min-height:30px !important;
+  margin:0 !important;
+  padding:0 !important;
+  border-top:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:5px !important;
+}
+</style>
+
+<style id="pass154-nav-arrangement">
+/* Pass 154 — arrange the desktop navigation as four clear levels:
+   Versions / Search, Try / Views, Getting Started.
+   Views stay directly beneath the Version buttons. */
+@media (min-width: 801px){
+  .compact-header{
+    height:116px !important;
+    min-height:116px !important;
+  }
+  .compact-header .toolbar{
+    position:relative !important;
+    height:104px !important;
+    min-height:104px !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) auto !important;
+    grid-template-rows:34px 28px 24px !important;
+    column-gap:10px !important;
+    row-gap:0 !important;
+    align-items:start !important;
+    align-self:center !important;
+  }
+  .compact-header .toolbar-top{
+    display:contents !important;
+  }
+  .compact-header .search-stack{
+    grid-column:1 !important;
+    grid-row:1 / span 2 !important;
+    display:grid !important;
+    grid-template-rows:34px 28px !important;
+    min-width:0 !important;
+    width:100% !important;
+  }
+  .compact-header .search-field{
+    grid-row:1 !important;
+    min-width:0 !important;
+  }
+  .compact-header .search-field #search{
+    width:100% !important;
+  }
+  .compact-header .try-suggestions{
+    grid-row:2 !important;
+    display:block !important;
+    width:100% !important;
+    height:28px !important;
+    min-height:28px !important;
+    margin:-1px 0 0 !important;
+    padding:0 !important;
+    line-height:20px !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    overflow:visible !important;
+  }
+  .compact-header .version-controls{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:5px !important;
+    height:34px !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .compact-header .toolbar-bottom{
+    position:static !important;
+    grid-column:2 !important;
+    grid-row:2 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:5px !important;
+    width:auto !important;
+    height:28px !important;
+    min-height:28px !important;
+    margin:0 !important;
+    padding:0 !important;
+    border-top:0 !important;
+  }
+  .compact-header .toolbar-bottom button{
+    height:28px !important;
+    padding:4px 9px !important;
+    font-size:11px !important;
+  }
+  #gettingStartedLink{
+    display:block !important;
+    grid-column:1 / -1 !important;
+    grid-row:3 !important;
+    width:max-content !important;
+    margin:0 auto !important;
+    padding:0 !important;
+    color:#54798a !important;
+    font:600 15px/20px Arial,sans-serif !important;
+    text-decoration:underline !important;
+  }
+}
+</style>
 </body></html><style id="pass148-result-wrap-fix">
 /* Pass 148 — allow result bites to wrap naturally onto a second line. */
 .result-card{
@@ -2906,3 +3138,139 @@ draw();
   });
 })();
 </script>
+
+<style id="pass152-header-getting-started-fix">
+/* Pass 152 — restore the compact 116px header and give Getting Started
+   its own centered line directly beneath Try. */
+.compact-header{
+  height:116px !important;
+  min-height:116px !important;
+}
+.compact-header .toolbar{
+  height:104px !important;
+  min-height:104px !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) !important;
+  grid-template-rows:34px 40px 30px !important;
+  gap:0 !important;
+  align-self:center !important;
+}
+.compact-header .toolbar-top{
+  grid-column:1 !important;
+  grid-row:1 !important;
+  min-height:34px !important;
+}
+.compact-header .try-suggestions{
+  grid-column:1 !important;
+  grid-row:2 !important;
+  display:block !important;
+  height:40px !important;
+  min-height:40px !important;
+  margin:-2px 0 0 !important;
+  padding:0 !important;
+  line-height:18px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  overflow:visible !important;
+}
+#gettingStartedLink{
+  display:block !important;
+  width:max-content !important;
+  margin:1px auto 0 !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  color:#54798a !important;
+  font:600 15px/18px Arial,sans-serif !important;
+  text-decoration:underline !important;
+  text-underline-offset:2px !important;
+  cursor:pointer !important;
+  vertical-align:baseline !important;
+}
+#gettingStartedLink:hover{color:#3f6675 !important}
+.compact-header .toolbar-bottom{
+  grid-column:1 !important;
+  grid-row:3 !important;
+  height:30px !important;
+  min-height:30px !important;
+  margin:0 !important;
+  padding-top:0 !important;
+  align-self:start !important;
+}
+.workspace{
+  height:calc(100vh - 116px) !important;
+}
+/* Keep the popup compact; the earlier pass was still visually too large. */
+#mcWelcomeBox{
+  width:min(560px,90vw) !important;
+  padding:16px 20px 14px !important;
+  font-size:13px !important;
+  line-height:1.35 !important;
+}
+#mcWelcomeBox h2{font-size:22px !important;line-height:1.1 !important;margin-bottom:4px !important}
+#mcWelcomeBox .mc-welcome-intro{margin-bottom:10px !important}
+#mcWelcomeBox ol{margin-bottom:10px !important}
+#mcWelcomeBox li{margin-bottom:5px !important}
+#mcWelcomeClose{padding:6px 14px !important;font-size:12px !important}
+</style>
+<style id="pass155-view-row-fix">
+/* Pass 155 — restore the view buttons to the right beneath the version buttons.
+   Do not move or restructure the Try / Getting Started lines; only move Views up. */
+@media (min-width:801px){
+  .compact-header .toolbar-bottom{
+    position:absolute !important;
+    top:34px !important;
+    right:0 !important;
+    width:auto !important;
+    height:28px !important;
+    min-height:28px !important;
+    margin:0 !important;
+    padding:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    gap:5px !important;
+    border-top:0 !important;
+    grid-column:auto !important;
+    grid-row:auto !important;
+  }
+  .compact-header .toolbar-bottom button{
+    height:28px !important;
+    padding:4px 9px !important;
+    font-size:11px !important;
+  }
+}
+</style>
+
+<style id="pass158-final-override">
+/* Pass 158 — final visible overrides. These are intentionally last so they win. */
+@media (min-width:801px){
+  /* Put the View buttons beneath the Version buttons with a clear one-line gap. */
+  .compact-header .toolbar-bottom{
+    position:absolute !important;
+    top:46px !important;
+    right:0 !important;
+    width:auto !important;
+    height:30px !important;
+    min-height:30px !important;
+    margin:0 !important;
+    padding:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    gap:5px !important;
+    border-top:0 !important;
+  }
+}
+/* Getting Started is a clean medium-blue text link, without an underline. */
+#gettingStartedLink,
+#gettingStartedLink:hover,
+#gettingStartedLink:focus,
+#gettingStartedLink:active,
+#gettingStartedLink:visited{
+  text-decoration:none !important;
+  text-decoration-line:none !important;
+  text-underline-offset:0 !important;
+  border-bottom:0 !important;
+}
+</style>
